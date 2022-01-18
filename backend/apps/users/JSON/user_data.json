@@ -1,0 +1,54 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+          "username": "tech1@th.homeservice.com",
+          "password": "pbkdf2_sha1$260000$vjmYpKPlHksDrXlvyyOsTu$MltF2loL56GjIyD5aQi1ZhBrj8k=",
+          "first_name": "สหไทย",
+          "last_name": "ชมชอบ",
+          "email": "tech1@th.homeservice.com",
+          "is_staff": "True",
+          "is_superuser": "False"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+          "username": "tech2@th.homeservice.com",
+          "password": "pbkdf2_sha1$260000$1XFLLaDQddIkf2BhkBJNzF$HBRyPVDrXilsejol12jUqrYjJ20=",
+          "first_name": "ณัฐพร",
+          "last_name": "ศรีประทุม",
+          "email": "tech2@th.homeservice.com",
+          "is_staff": "True",
+          "is_superuser": "False"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+          "username": "tech3@th.homeservice.com",
+          "password": "pbkdf2_sha1$260000$riVDYSZH42kWf5vThmq1HF$qPD0EGXRpJykmcmbjNBBTatn1Uc=",
+          "first_name": "พุทธมณฑล",
+          "last_name": "เลยไปแล้ว",
+          "email": "tech3@th.homeservice.com",
+          "is_staff": "True",
+          "is_superuser": "False"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+          "username": "admin1@th.homeservice.com",
+          "password": "pbkdf2_sha1$260000$wgr5XjplaxDyqhiJxlt2Mz$sE8R80XYrT8+ONnlNi2skg6gFzM=",
+          "first_name": "ศิริพร",
+          "last_name": "ลำจวล",
+          "email": "user4@th.homeservice.com",
+          "is_staff": "True",
+          "is_superuser": "True"
+        }
+    }
+]
