@@ -1,6 +1,6 @@
 [
     {
-      "model": "services.category",
+      "model": "backend.apps.services.category",
       "pk": 1,
       "fields": {
         "name": "ล้างแอร์",
@@ -10,7 +10,7 @@
       }
     },
     {
-      "model": "services.category",
+      "model": "backend.apps.services.category",
       "pk": 2,
       "fields": {
         "name": "ระเบิดแอร์",
@@ -20,7 +20,7 @@
       }
     },
     {
-      "model": "services.category",
+      "model": "backend.apps.services.category",
       "pk": 3,
       "fields": {
         "name": "เปลี่ยนอุปกรณ์ภายใน",
