@@ -1,6 +1,4 @@
-from cgitb import lookup
 from django.db.models import query
-from markupsafe import re
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework.response import Response
@@ -48,7 +46,6 @@ class UserLogin(TokenObtainPairView):
 
 
 class CustomerCreate(APIView):
-
     def post(self, request):
         data = request.data
         phone_no = '-'

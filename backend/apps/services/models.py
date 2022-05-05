@@ -16,7 +16,7 @@ class CategoryModel(EditableModel):
     category_code = models.CharField(max_length=3, verbose_name='รหัสหมวดหมู่')
     objects = CategoryQuerySet.as_manager()
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f'[{self.id} - {self.name}]'
 
     class Meta:

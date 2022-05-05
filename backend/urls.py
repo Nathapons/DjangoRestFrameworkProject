@@ -20,6 +20,7 @@ from .settings import INSTALLED_APPS
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
     path('users/', include('backend.apps.users.urls')),
     # path('orders/', include('backend.apps.orders.urls')),
     path('services/', include('backend.apps.services.urls')),

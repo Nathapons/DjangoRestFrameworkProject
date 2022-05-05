@@ -46,29 +46,31 @@ class OrderQuerySet(FilterIdQuerySet):
 
 
 class OrderModel(EditableModel): 
-    PAYMENT_STATUS = (
-        ('COMPLETE', 'ชำระเงินเรียบร้อย'),
-        ('IN_PROGRESS', 'ค้างชำระเงิน'),
-        ('CANCEL', 'ยกเลิกชำระเงิน')
-    )
+    class PaymentStatus(models.IntegerChoices):
+        COMPLETE = 1, 'Complete'
+        IN_PROGRESS = 2, 'InProgress'
+        CANCEL = 3, 'Cancel'
 
-    ORDER_STATUS = (
-        ('COMPLETE', 'ดำเนินงานเสร็จสิ้น'),
-        ('IN_PROGRESS', 'กำลังดำเนินงาน'),
-        ('WAIT', 'รอการดำเนินงาน')
-    )
+    class OrderStatus(models.IntegerChoices):
+        COMPLETE = 1, 'Complete'
+        MEDIUM = 2, 'Medium'
+        WAIT = 3, 'Wait'
 
     customer = models.ForeignKey(CustomersModel, on_delete=models.CASCADE)
     credit_card = models.ForeignKey(CreditCardModel, on_delete=models.CASCADE)
-    pay_status = models.CharField(
-        max_length=100, 
+    pay_status = models.IntegerField(
+        default=PaymentStatus.IN_PROGRESS, 
+        choices=PaymentStatus.choices,
         verbose_name='สถานะการจ่ายเงิน',
-        choices=PAYMENT_STATUS
     )
     work_date = models.DateField(verbose_name='วันที่ทำงาน')
     location = models.CharField(max_length=255, verbose_name='สถานที่บริการ')
     total_price = models.DecimalField(max_digits=99, decimal_places=2, verbose_name='จำนวนการคำสั่ง')
-    order_status = models.CharField(max_length=100, choices=ORDER_STATUS, verbose_name='สถานะคำสั่ง')
+    order_status = models.IntegerField(
+        default=OrderStatus.WAIT, 
+        choices=OrderStatus.choices, 
+        verbose_name='สถานะคำสั่ง'
+    )
     objects = OrderQuerySet.as_manager()
 
     def __str__(self):
